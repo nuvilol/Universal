@@ -1,0 +1,189 @@
+-- First Cheat (Made by Nuvi)
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local Stroke = Instance.new("UIStroke")
+local Drag = Instance.new("UIDragDetector")
+local InfJumpbutton = Instance.new("TextButton")
+local InfJumpbuttonStroke = Instance.new("UIStroke")
+local BigJumpButton = Instance.new("TextButton")
+local BigJumpButtonStroke = Instance.new("UIStroke")
+local FastWalkButton = Instance.new("TextButton")
+local FastWalkStroke = Instance.new("UIStroke")
+local LayoutFrame = Instance.new("Frame")
+local ButtonLayout = Instance.new("UIListLayout")
+local LoginFrame = Instance.new("Frame")
+local LoginStroke = Instance.new("UIStroke")
+local LoginCorner = Instance.new("UICorner")
+local LoginInput = Instance.new("TextBox")
+local LoginInputCorner = Instance.new("UICorner")
+local LoginButton = Instance.new("TextButton")
+local LoginStroke = Instance.new("UIStroke")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui
+Frame.Name = "Frame"
+Frame.Position = UDim2.new(0.342, 0,0.382, 0)
+Frame.Size = UDim2.new(0, 606,0, 254)
+Frame.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+
+Drag.Parent = Frame
+
+Stroke.Parent = Frame
+Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Stroke.Thickness = 3
+Stroke.Color = Color3.fromRGB(255,255,255)
+
+UICorner.Parent = Frame
+UICorner.CornerRadius = UDim.new(0.125, 0)
+
+LoginFrame.Parent = Frame
+LoginFrame.Name = "LoginFrame"
+LoginFrame.Size = UDim2.new(1,0,1,0)
+LoginFrame.Position = UDim2.new(0,0,0,0)
+LoginFrame.BackgroundTransparency = 0
+LoginFrame.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+LoginFrame.ZIndex = 99
+
+LoginCorner.Parent = LoginFrame
+LoginCorner.CornerRadius = UDim.new(0.125, 0)
+
+LoginInput.Parent = LoginFrame
+LoginInput.ZIndex = 100
+LoginInput.Name = "LoginInput"
+LoginInput.BackgroundColor3 = Color3.fromRGB(109,109,109)
+LoginInput.Size = UDim2.new(0, 305,0, 35)
+LoginInput.Position = UDim2.new(0.233, 0,0.335, 0)
+LoginInput.Font = Enum.Font.Highway
+LoginInput.PlaceholderText = "Insert Log-In Key Here"
+LoginInput.PlaceholderColor3 = Color3.fromRGB(255,255,255)
+LoginInput.TextColor3 = Color3.fromRGB(255,255,255)
+LoginInput.TextScaled = true
+
+LoginInputCorner.Parent = LoginInput
+LoginInputCorner.CornerRadius = UDim.new(0.525, 0)
+
+LoginButton.Parent = LoginFrame
+LoginButton.ZIndex = 100
+LoginButton.Name = "LoginButton"
+LoginButton.BackgroundTransparency = 1
+LoginButton.Position = UDim2.new(0.318, 0,0.575, 0)
+LoginButton.Size = UDim2.new(0, 200,0, 50)
+LoginButton.Text = "Login"
+LoginButton.Font = Enum.Font.Highway
+LoginButton.TextColor3 = Color3.new(255,255,255)
+LoginButton.TextScaled = true
+
+LoginStroke.Parent = LoginButton
+LoginStroke.Thickness = 3
+LoginStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+
+LoginButton.MouseButton1Click:Connect(function()
+	if LoginInput.Text ~= "A6HasdHh!!hfinas9" then
+		for i = 5, 1, -1 do
+			wait(1)
+			local function sendNotification()
+				-- Send the notification to the player
+				game:GetService("StarterGui"):SetCore("SendNotification", {
+					Title = "Login was incorrect",
+					Text = "Kicking in: "..i,
+					Duration = 5
+				})
+			end
+
+			sendNotification()
+		end
+		task.wait(5)
+		game.Players.LocalPlayer:Kick("Login was incorrect")
+	else
+		LoginFrame.Visible = false
+	end
+end)
+
+Title.Parent = Frame
+Title.Name = "Title"
+Title.Text = "Universal Cheat"
+Title.Size = UDim2.new(0, 606,0, 50)
+Title.TextScaled = true
+Title.Position = UDim2.new(0, 0,0.024, 0)
+Title.BackgroundTransparency = 1
+Title.TextColor3 = Color3.fromRGB(255,255,255)
+Title.Font = Enum.Font.Highway
+
+LayoutFrame.Parent = Frame
+LayoutFrame.Name = "LayoutFrame"
+LayoutFrame.BackgroundTransparency = 1
+LayoutFrame.Size = UDim2.new(0, 606,0, 198)
+LayoutFrame.Position = UDim2.new(0, 0,0.22, 0)
+
+ButtonLayout.Parent = LayoutFrame
+ButtonLayout.FillDirection = Enum.FillDirection.Vertical
+ButtonLayout.Wraps = true
+ButtonLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+ButtonLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+ButtonLayout.Padding = UDim.new(0, 12)
+
+InfJumpbutton.Parent = LayoutFrame
+InfJumpbutton.Name = "InfJumpButton"
+InfJumpbutton.BackgroundTransparency = 1
+InfJumpbutton.Text = "Inf Jump"
+InfJumpbutton.TextColor3 = Color3.fromRGB(255,255,255)
+InfJumpbutton.Position = UDim2.new(0.31, 0,0.252, 0)
+InfJumpbutton.Size = UDim2.new(0, 405,0, 50)
+InfJumpbutton.TextScaled = true
+InfJumpbutton.AnchorPoint = Vector2.new(0, 0)
+
+InfJumpbuttonStroke.Parent = InfJumpbutton
+InfJumpbuttonStroke.Thickness = 3.5
+InfJumpbuttonStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+
+InfJumpbutton.MouseButton1Click:Connect(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		if not game.Players.LocalPlayer.Character then return end
+		if not game.Players.LocalPlayer.Character.Humanoid then return end
+		if game.Players.LocalPlayer.Character.Humanoid.Jump then
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+		end
+		InfJumpbutton.Text = "Inf Jump Enabled"
+	end)
+end)
+
+BigJumpButton.Parent = LayoutFrame
+BigJumpButton.Name = "BigJumpButton"
+BigJumpButton.BackgroundTransparency = 1
+BigJumpButton.Text = "Big Jump"
+BigJumpButton.TextColor3 = Color3.fromRGB(255,255,255)
+BigJumpButton.Position = UDim2.new(0.31, 0,0.482, 0)
+BigJumpButton.Size = UDim2.new(0, 405,0, 50)
+BigJumpButton.TextScaled = true
+
+BigJumpButtonStroke.Parent = BigJumpButton
+BigJumpButtonStroke.Thickness = 3.5
+BigJumpButtonStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+
+BigJumpButton.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+end)
+
+FastWalkButton.Parent = LayoutFrame
+FastWalkButton.Name = "FastWalkButton"
+FastWalkButton.BackgroundTransparency = 1
+FastWalkButton.Text = "Fast Walk"
+FastWalkButton.TextColor3 = Color3.fromRGB(255,255,255)
+FastWalkButton.Position = UDim2.new(0.31, 0,0.718, 0)
+FastWalkButton.Size = UDim2.new(0, 405,0, 50)
+FastWalkButton.TextScaled = true
+
+FastWalkStroke.Parent = FastWalkButton
+FastWalkStroke.Thickness = 3.5
+FastWalkStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+
+FastWalkButton.MouseButton1Click:Connect(function()
+	repeat
+		task.wait(.1)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+	until script.Enabled == false
+end)
