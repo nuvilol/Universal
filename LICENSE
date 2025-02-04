@@ -1,201 +1,189 @@
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+-- First Cheat (Made by Nuvi)
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local Stroke = Instance.new("UIStroke")
+local Drag = Instance.new("UIDragDetector")
+local InfJumpbutton = Instance.new("TextButton")
+local InfJumpbuttonStroke = Instance.new("UIStroke")
+local BigJumpButton = Instance.new("TextButton")
+local BigJumpButtonStroke = Instance.new("UIStroke")
+local FastWalkButton = Instance.new("TextButton")
+local FastWalkStroke = Instance.new("UIStroke")
+local LayoutFrame = Instance.new("Frame")
+local ButtonLayout = Instance.new("UIListLayout")
+local LoginFrame = Instance.new("Frame")
+local LoginStroke = Instance.new("UIStroke")
+local LoginCorner = Instance.new("UICorner")
+local LoginInput = Instance.new("TextBox")
+local LoginInputCorner = Instance.new("UICorner")
+local LoginButton = Instance.new("TextButton")
+local LoginStroke = Instance.new("UIStroke")
 
-   1. Definitions.
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
+Frame.Parent = ScreenGui
+Frame.Name = "Frame"
+Frame.Position = UDim2.new(0.342, 0,0.382, 0)
+Frame.Size = UDim2.new(0, 606,0, 254)
+Frame.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+Drag.Parent = Frame
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+Stroke.Parent = Frame
+Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Stroke.Thickness = 3
+Stroke.Color = Color3.fromRGB(255,255,255)
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
+UICorner.Parent = Frame
+UICorner.CornerRadius = UDim.new(0.125, 0)
 
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
+LoginFrame.Parent = Frame
+LoginFrame.Name = "LoginFrame"
+LoginFrame.Size = UDim2.new(1,0,1,0)
+LoginFrame.Position = UDim2.new(0,0,0,0)
+LoginFrame.BackgroundTransparency = 0
+LoginFrame.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+LoginFrame.ZIndex = 99
 
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
+LoginCorner.Parent = LoginFrame
+LoginCorner.CornerRadius = UDim.new(0.125, 0)
 
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
+LoginInput.Parent = LoginFrame
+LoginInput.ZIndex = 100
+LoginInput.Name = "LoginInput"
+LoginInput.BackgroundColor3 = Color3.fromRGB(109,109,109)
+LoginInput.Size = UDim2.new(0, 305,0, 35)
+LoginInput.Position = UDim2.new(0.233, 0,0.335, 0)
+LoginInput.Font = Enum.Font.Highway
+LoginInput.PlaceholderText = "Insert Log-In Key Here"
+LoginInput.PlaceholderColor3 = Color3.fromRGB(255,255,255)
+LoginInput.TextColor3 = Color3.fromRGB(255,255,255)
+LoginInput.TextScaled = true
 
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
+LoginInputCorner.Parent = LoginInput
+LoginInputCorner.CornerRadius = UDim.new(0.525, 0)
 
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
+LoginButton.Parent = LoginFrame
+LoginButton.ZIndex = 100
+LoginButton.Name = "LoginButton"
+LoginButton.BackgroundTransparency = 1
+LoginButton.Position = UDim2.new(0.318, 0,0.575, 0)
+LoginButton.Size = UDim2.new(0, 200,0, 50)
+LoginButton.Text = "Login"
+LoginButton.Font = Enum.Font.Highway
+LoginButton.TextColor3 = Color3.new(255,255,255)
+LoginButton.TextScaled = true
 
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
+LoginStroke.Parent = LoginButton
+LoginStroke.Thickness = 3
+LoginStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
 
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
+LoginButton.MouseButton1Click:Connect(function()
+	if LoginInput.Text ~= "A6HasdHh!!hfinas9" then
+		for i = 5, 1, -1 do
+			wait(1)
+			local function sendNotification()
+				-- Send the notification to the player
+				game:GetService("StarterGui"):SetCore("SendNotification", {
+					Title = "Login was incorrect",
+					Text = "Kicking in: "..i,
+					Duration = 5
+				})
+			end
 
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
+			sendNotification()
+		end
+		task.wait(5)
+		game.Players.LocalPlayer:Kick("Login was incorrect")
+	else
+		LoginFrame.Visible = false
+	end
+end)
 
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
+Title.Parent = Frame
+Title.Name = "Title"
+Title.Text = "Universal Cheat"
+Title.Size = UDim2.new(0, 606,0, 50)
+Title.TextScaled = true
+Title.Position = UDim2.new(0, 0,0.024, 0)
+Title.BackgroundTransparency = 1
+Title.TextColor3 = Color3.fromRGB(255,255,255)
+Title.Font = Enum.Font.Highway
 
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
+LayoutFrame.Parent = Frame
+LayoutFrame.Name = "LayoutFrame"
+LayoutFrame.BackgroundTransparency = 1
+LayoutFrame.Size = UDim2.new(0, 606,0, 198)
+LayoutFrame.Position = UDim2.new(0, 0,0.22, 0)
 
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
+ButtonLayout.Parent = LayoutFrame
+ButtonLayout.FillDirection = Enum.FillDirection.Vertical
+ButtonLayout.Wraps = true
+ButtonLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+ButtonLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+ButtonLayout.Padding = UDim.new(0, 12)
 
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
+InfJumpbutton.Parent = LayoutFrame
+InfJumpbutton.Name = "InfJumpButton"
+InfJumpbutton.BackgroundTransparency = 1
+InfJumpbutton.Text = "Inf Jump"
+InfJumpbutton.TextColor3 = Color3.fromRGB(255,255,255)
+InfJumpbutton.Position = UDim2.new(0.31, 0,0.252, 0)
+InfJumpbutton.Size = UDim2.new(0, 405,0, 50)
+InfJumpbutton.TextScaled = true
+InfJumpbutton.AnchorPoint = Vector2.new(0, 0)
 
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
+InfJumpbuttonStroke.Parent = InfJumpbutton
+InfJumpbuttonStroke.Thickness = 3.5
+InfJumpbuttonStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
 
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
+InfJumpbutton.MouseButton1Click:Connect(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		if not game.Players.LocalPlayer.Character then return end
+		if not game.Players.LocalPlayer.Character.Humanoid then return end
+		if game.Players.LocalPlayer.Character.Humanoid.Jump then
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+		end
+		InfJumpbutton.Text = "Inf Jump Enabled"
+	end)
+end)
 
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
+BigJumpButton.Parent = LayoutFrame
+BigJumpButton.Name = "BigJumpButton"
+BigJumpButton.BackgroundTransparency = 1
+BigJumpButton.Text = "Big Jump"
+BigJumpButton.TextColor3 = Color3.fromRGB(255,255,255)
+BigJumpButton.Position = UDim2.new(0.31, 0,0.482, 0)
+BigJumpButton.Size = UDim2.new(0, 405,0, 50)
+BigJumpButton.TextScaled = true
 
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
+BigJumpButtonStroke.Parent = BigJumpButton
+BigJumpButtonStroke.Thickness = 3.5
+BigJumpButtonStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
 
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
+BigJumpButton.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+end)
 
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
+FastWalkButton.Parent = LayoutFrame
+FastWalkButton.Name = "FastWalkButton"
+FastWalkButton.BackgroundTransparency = 1
+FastWalkButton.Text = "Fast Walk"
+FastWalkButton.TextColor3 = Color3.fromRGB(255,255,255)
+FastWalkButton.Position = UDim2.new(0.31, 0,0.718, 0)
+FastWalkButton.Size = UDim2.new(0, 405,0, 50)
+FastWalkButton.TextScaled = true
 
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
+FastWalkStroke.Parent = FastWalkButton
+FastWalkStroke.Thickness = 3.5
+FastWalkStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
 
-   END OF TERMS AND CONDITIONS
-
-   APPENDIX: How to apply the Apache License to your work.
-
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "[]"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
-
-   Copyright [yyyy] [name of copyright owner]
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+FastWalkButton.MouseButton1Click:Connect(function()
+	repeat
+		task.wait(.1)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+	until script.Enabled == false
+end)
